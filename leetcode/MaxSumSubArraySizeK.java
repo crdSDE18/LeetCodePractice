@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MaxSumSubArraySizeK {
 
     public static void main(String[] args){
-        int[] nums = new int[]{2,1,3,1,9,0};
+        int[] nums = new int[]{2,1,3,1,9,0};//13
         int K = 3;
 
         System.out.println((maxSumSubArray(nums,K)));
