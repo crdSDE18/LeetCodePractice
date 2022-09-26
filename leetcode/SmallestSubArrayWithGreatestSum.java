@@ -3,7 +3,7 @@ package leetcode;
 public class SmallestSubArrayWithGreatestSum {
 
     public static void main(String[] args){
-        int[] nums = new int[]{2,1,5,2,3,2};
+        int[] nums = new int[]{2,1,5,2,3,2};//3
         int sum = 7;
 
         System.out.println(smallestSubArrayGreatestSum(nums,sum));
