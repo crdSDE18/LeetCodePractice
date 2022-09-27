@@ -6,6 +6,7 @@ public class BestTimeToBuySell {
         int[] prices = new int[]{7, 1, 5, 3, 6, 4};//5
         int[] prices2 = new int[]{1,2};//1
         System.out.println(maxProfit(prices));
+        System.out.println(maxProfit(prices2));
     }
 
     private static int maxProfit(int[] prices) {
