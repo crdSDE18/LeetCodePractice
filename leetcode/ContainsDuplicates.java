@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class ContainsDuplicates {
 
@@ -11,12 +12,12 @@ public class ContainsDuplicates {
     }
 
     private static boolean hasDuplicates(int[] nums){
-        HashSet<Integer> dup = new HashSet<>();
+        Set<Integer> dup = new HashSet<>();
 
         for(int num:nums){
-            if(!dup.add(num)){//set thereom - no duplicates, so if it can't be added it must already exists in set
-                return false;
+            if(!dup.contains(num)){//set thereom - no duplicates, so if it can't be added it must already exists in set
+                return true;
             }
-        }return true;
+        }return false;
     }
 }
