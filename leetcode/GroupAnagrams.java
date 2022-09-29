@@ -12,18 +12,22 @@ public class GroupAnagrams {
 
     private static List<List<String>> groupAnagrams(String[] strings){
         Map<String,List> groups = new HashMap<String,List>();
-
         for(String s: strings) {
-            char[]  a = s.toCharArray();
-            Arrays.sort(a);
-            String sortedKey = String.valueOf(a);
-            if (!groups.containsKey(sortedKey)) {
-               groups.put(sortedKey,new ArrayList<>());
-               groups.get(sortedKey).add(s);
+           String temp = sortString(s);
+            if (!groups.containsKey(temp)) {
+               groups.put(temp,new ArrayList<>());
+               groups.get(temp).add(s);
             }
             else{
-                groups.get(sortedKey).add(s);
+                groups.get(temp).add(s);
             }
         }return new ArrayList(groups.values());
+    }
+
+
+    private static String sortString(String s){
+        char[]  a = s.toCharArray();
+        Arrays.sort(a);
+        return new String(a);
     }
 }
