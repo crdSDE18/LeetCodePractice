@@ -9,20 +9,19 @@ public class BestTimeToBuySell {
         System.out.println(maxProfit(prices2));
     }
 
-    private static int maxProfit(int[] prices) {
-        int lsf = Integer.MAX_VALUE;
+    private static int maxProfit(int[] nums) {
         int maxProfit = 0;
-        int currentProfitToday = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < lsf) {
-                lsf = prices[i];
-            }
-            currentProfitToday = prices[i] - lsf;
-            if (maxProfit < currentProfitToday) {
-                maxProfit = currentProfitToday;
-            }
+        int windowStart = 0;
 
+        for(int windowEnd=0; windowEnd<nums.length; windowEnd++) {
+            maxProfit = Math.max(maxProfit, nums[windowEnd] - nums[windowStart]);
+
+            if(nums[windowEnd] < nums[windowStart]) {
+                windowStart = windowEnd;
+            }
         }
+
         return maxProfit;
+
     }
 }
