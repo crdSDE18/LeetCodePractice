@@ -27,5 +27,3 @@ public class TwoSumOptimized {
         return new int[]{first_index, index};
     }
 }
-
-}
