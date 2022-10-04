@@ -20,26 +20,18 @@ public class MergeSortedArrays {
 
         while (i < m && j < n) {//handles merging
             if (num[i] < num1[j]) {
-                result[index] = num[i];
-                index++;
-                i++;
+                result[index++] = num[i++];
             } else {
-                result[index] = num1[j];
-                index++;
-                j++;
+                result[index++] = num1[j++];
             }
         }
         //handles whatever is left
         while (i < m) {
-            result[index] = num[i];
-            index++;
-            i++;
+            result[index++] = num[i++];
         }
 
         while (j < n) {
-            result[index] = num1[j];
-            index++;
-            j++;
+            result[index++] = num1[j++];
         }
 
         return result;
