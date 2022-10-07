@@ -6,19 +6,18 @@ public class validPalindrome {
         String s = "A man, a plan, a canal: Panama"; // true O(n) solution
         System.out.println(isPalindrome(s));
     }
-
+//thoughts regex to remove all non letters
     private static boolean isPalindrome(String s){
-    char[] arr = s.toCharArray();
     int left = 0;
-    int right = arr.length - 1;
+    int right = s.length()- 1;
     while (left < right) {
-        while (left < right && !Character.isLetterOrDigit(arr[left])) {
+        while (left <right && !Character.isLetterOrDigit(s.charAt(left))) {
             left++;
         }
-        while (left < right && !Character.isLetterOrDigit(arr[right])) {
+        while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
             right--;
         }
-        if (Character.toLowerCase(arr[left]) != Character.toLowerCase(arr[right])) return false;
+        if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) return false;
         left++;
         right--;
     }
