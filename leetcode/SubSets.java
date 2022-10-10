@@ -11,7 +11,6 @@ public class SubSets {
     }
 
     private static List<List<Integer>> findSubsets(int[] nums) {
-       List<Integer>a = new ArrayList<>();
         List<List<Integer>> subsets = new ArrayList<>();
         //empty subset
         subsets.add(new ArrayList<>());
