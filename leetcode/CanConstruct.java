@@ -20,13 +20,13 @@ public class CanConstruct {
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < ransomNote.length(); i++) {
             char currentCharNote = ransomNote.charAt(i);
-                map.put(currentCharNote, map.getOrDefault(currentCharNote, 1) + 1);
+                map.put(currentCharNote, map.getOrDefault(currentCharNote, 0) + 1);
         }
         for (int i = 0; i < magazine.length(); i++) {
             char currentCharMag = magazine.charAt(i);
             if (map.containsKey(currentCharMag)) {
                 map.put(currentCharMag, map.get(currentCharMag) - 1);
-                if (map.get(currentCharMag) == 1) {
+                if (map.get(currentCharMag) == 0) {
                     map.remove(currentCharMag);
                 }
             }
